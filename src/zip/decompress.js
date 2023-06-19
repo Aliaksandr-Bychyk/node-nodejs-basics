@@ -1,10 +1,9 @@
 import fs from 'fs'
 import path from 'path';
 import zlib from 'zlib';
-import { fileURLToPath } from 'url';
+import getDirname from '../getDirname.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirname(import.meta.url);
 
 const file = path.join(__dirname, 'files', 'fileToCompress1.txt');
 const archive = path.join(__dirname, 'files', 'archive.gz');

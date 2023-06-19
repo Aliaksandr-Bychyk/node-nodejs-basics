@@ -1,10 +1,9 @@
 import os from 'os';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { Worker } from 'worker_threads';
+import getDirname from '../getDirname.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirname(import.meta.url);
 
 const workerFile = path.join(__dirname, 'worker.js');
 

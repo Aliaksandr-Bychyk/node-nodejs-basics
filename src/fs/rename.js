@@ -1,9 +1,8 @@
 import path from 'path';
-import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
+import getDirname from '../getDirname.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirname(import.meta.url);
 
 const startFile = path.join(__dirname, 'files', 'wrongFilename.txt');
 const endFile = path.join(__dirname, 'files', 'properFilename.md');

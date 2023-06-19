@@ -1,9 +1,8 @@
 import path from 'path';
-import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
+import getDirname from '../getDirname.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirname(import.meta.url);
 
 const startFolder = path.join(__dirname, 'files');
 const endFolder = path.join(__dirname, 'copy-files');

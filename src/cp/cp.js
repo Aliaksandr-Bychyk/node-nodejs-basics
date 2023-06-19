@@ -1,9 +1,8 @@
 import cp from 'child_process';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import getDirname from '../getDirname.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirname(import.meta.url);
 
 const script = path.join(__dirname, 'files', 'script.js');
 
