@@ -1,5 +1,5 @@
 import path from 'path';
-import {fileURLToPath} from 'url';
+import { fileURLToPath } from 'url';
 import crypto from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -10,7 +10,7 @@ const file = path.join(__dirname, 'files', 'fileToCalculateHashFor.txt');
 const calculateHash = async () => {
     const hash = crypto.createHash('sha256');
     hash.update(file);
-    console.log(hash.digest('hex'))
+    console.log(hash.digest('hex'));
 };
 
 await calculateHash();
