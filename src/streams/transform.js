@@ -1,6 +1,3 @@
-import fs from 'fs'
-import path from 'path';
-import {fileURLToPath} from 'url';
 import {Transform} from 'stream';
 
 const transform = async () => {
