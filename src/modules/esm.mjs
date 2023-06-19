@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs/promises'
 import { release, version } from 'os';
 import { createServer as createServerHttp } from 'http';
 import './files/c.js';
@@ -14,10 +15,15 @@ const random = Math.random();
 
 let unknownObject;
 
+const importJSON = async (fileName) => {
+    const file = path.join(__dirname, 'files', fileName);
+    return JSON.parse(await fs.readFile(file, {encoding: 'utf-8'}));
+}
+
 if (random > 0.5) {
-    unknownObject = fileA;
+    unknownObject = await importJSON('a.json');
 } else {
-    unknownObject = fileB;
+    unknownObject = await importJSON('b.json');
 }
 
 console.log(`Release ${release()}`);
